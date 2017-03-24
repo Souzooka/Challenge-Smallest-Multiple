@@ -32,9 +32,10 @@ module.exports = function( ceiling ) {
 
   // the faster way
   let testNum = 0;
+  let lcmNum = 1;
 
-  while (true) {
-    break;
+  for (var i = 2; i < ceiling; i++) {
+    lcmNum = lcm(lcmNum, i);
   }
 
   function lcm(min, max) {
@@ -50,7 +51,7 @@ module.exports = function( ceiling ) {
     return testNum;
   }
 
-  console.log(lcm(9, 10));
+  return lcmNum;
 
 };
 
