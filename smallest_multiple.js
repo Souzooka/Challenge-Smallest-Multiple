@@ -9,7 +9,7 @@
 module.exports = function( ceiling ) {
   // do work here
 
-  // the slow way
+/*  // the slow way
   let testNum = 0;
   let divisionTest = true;
   while (true) {
@@ -28,5 +28,30 @@ module.exports = function( ceiling ) {
     }
   }
 
-  return testNum;
+  return testNum;*/
+
+  // the faster way
+  let testNum = 0;
+
+  while (true) {
+    break;
+  }
+
+  function lcm(min, max) {
+    let testNum = 0;
+
+    while (true) {
+      testNum += max;
+      if (testNum % min === 0 && testNum % max === 0) {
+        break;
+      }
+    }
+
+    return testNum;
+  }
+
+  console.log(lcm(9, 10));
+
 };
+
+
