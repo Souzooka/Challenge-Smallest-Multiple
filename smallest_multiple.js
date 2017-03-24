@@ -39,20 +39,38 @@ module.exports = function( ceiling ) {
   }
 
   function lcm(min, max) {
-    let testNum = 0;
+    let gcdNum = gcd(min, max);
 
-    while (true) {
-      testNum += max;
-      if (testNum % min === 0 && testNum % max === 0) {
-        break;
-      }
+    return Math.abs(min * max) / gcdNum;
+  }
+
+  function gcd(min, max) {
+
+    let divisor = 0;
+
+    while (min % 2 === 0 && max % 2 === 0) {
+      divisor++;
+      min /= 2;
+      max /= 2;
     }
 
-    return testNum;
+    while (min !== max) {
+      if (min % 2 === 0) {
+        min /= 2;
+      }
+      else if (max % 2 === 0) {
+        max /= 2;
+      }
+      else if (min > max) {
+        min = (min - max)/2;
+      } else {
+        max = (max - min)/2;
+      }
+    }
+    return min * Math.pow(2, divisor);
+
   }
 
   return lcmNum;
 
 };
-
-
