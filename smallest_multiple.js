@@ -19,6 +19,7 @@ module.exports = function( ceiling ) {
     for (let i = 2; i < ceiling; i++) {
       if (testNum % i !== 0) {
         divisionTest = false;
+        break;
       }
     }
 
