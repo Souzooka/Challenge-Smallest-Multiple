@@ -31,7 +31,6 @@ module.exports = function( ceiling ) {
   return testNum;*/
 
   // the faster way
-  let testNum = 0;
   let lcmNum = 1;
 
   for (var i = 2; i < ceiling; i++) {
