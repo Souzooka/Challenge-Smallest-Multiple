@@ -41,7 +41,7 @@ module.exports = function( ceiling ) {
   function lcm(min, max) {
     let gcdNum = gcd(min, max);
 
-    return Math.abs(min * max) / gcdNum;
+    return min * max / gcdNum;
   }
 
   function gcd(min, max) {
