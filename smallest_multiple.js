@@ -9,6 +9,23 @@
 module.exports = function( ceiling ) {
   // do work here
 
+  // the slow way
+  let testNum = 0;
+  let divisionTest = true;
+  while (true) {
+    divisionTest = true;
+    testNum += ceiling;
 
-  return 0;
+    for (let i = 2; i < ceiling; i++) {
+      if (testNum % i !== 0) {
+        divisionTest = false;
+      }
+    }
+
+    if (divisionTest) {
+      break;
+    }
+  }
+
+  return testNum;
 };
